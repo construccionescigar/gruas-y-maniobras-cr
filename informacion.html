@@ -6,6 +6,7 @@
 <title>CIGAR | Servicios</title>
 
 <style>
+
 *{
   margin:0;
   padding:0;
@@ -17,7 +18,7 @@ body{
   background:#f4f6f8;
 }
 
-/* NAV GLOBAL */
+/* NAV GLOBAL (NO TOCADO) */
 nav{
   background:#000;
   padding:15px;
@@ -40,25 +41,42 @@ nav a:hover{
   opacity:0.7;
 }
 
-/* HEADER */
+/* 🔥 HEADER MEJORADO (FONDO INDUSTRIAL) */
 .header{
-  background:#111;
+  position:relative;
   color:white;
-  padding:80px 20px;
+  padding:90px 20px;
   text-align:center;
+
+  background:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7')
+  center/cover no-repeat;
+}
+
+/* overlay oscuro elegante */
+.header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+.header > *{
+  position:relative;
+  z-index:1;
 }
 
 .header h1{
   font-size:40px;
   margin-bottom:10px;
+  letter-spacing:1px;
 }
 
 .header p{
-  opacity:0.8;
+  opacity:0.9;
   font-size:18px;
 }
 
-/* SECCIÓN */
+/* SECCIÓN (NO TOCADA) */
 .section{
   padding:70px 20px;
   text-align:center;
@@ -77,7 +95,7 @@ nav a:hover{
   color:#333;
 }
 
-/* CARDS */
+/* CARDS (NO TOCADAS) */
 .cards{
   display:flex;
   flex-wrap:wrap;
@@ -112,6 +130,7 @@ nav a:hover{
 @media(max-width:700px){
   .header h1{font-size:28px;}
 }
+
 </style>
 </head>
 
