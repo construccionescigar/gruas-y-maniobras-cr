@@ -32,10 +32,6 @@ nav a{
   font-weight:bold;
 }
 
-nav a:hover{
-  opacity:0.7;
-}
-
 /* HERO */
 .hero{
   background:#000;
@@ -49,73 +45,57 @@ nav a:hover{
   margin-bottom:15px;
 }
 
-.hero h1{
-  font-size:40px;
-}
-
-.hero p{
-  margin-top:10px;
-  opacity:0.8;
-}
-
-/* CONTENEDOR */
+/* CONTENEDOR CON MARCO (3ra imagen) */
 .container{
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:50px 20px;
+  padding:50px;
   position:relative;
-  overflow:hidden;
   min-height:450px;
+
+  /* 🔥 3RA IMAGEN COMO BORDE */
+  border:40px solid transparent;
+  border-image-source: url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg');
+  border-image-slice: 30;
+  border-image-repeat: stretch;
 }
 
-/* 🔥 COLLAGE REAL */
+/* FONDO INTERIOR (2 IMÁGENES) */
 .bg{
   position:absolute;
   inset:0;
   z-index:0;
 }
 
-/* IMAGEN 1 */
+/* IMAGEN IZQUIERDA */
 .bg1{
   position:absolute;
   top:0;
   left:0;
-  width:55%;
-  height:60%;
+  width:50%;
+  height:100%;
   background:url('https://res.cloudinary.com/deod0oalc/image/upload/9e4a9d3f-a5d8-4d66-80bd-86908a1adf54_agiwts.jpg')
   center/cover no-repeat;
 }
 
-/* IMAGEN 2 */
+/* IMAGEN DERECHA */
 .bg2{
   position:absolute;
   top:0;
   right:0;
-  width:55%;
-  height:60%;
+  width:50%;
+  height:100%;
   background:url('https://res.cloudinary.com/deod0oalc/image/upload/70dddf35-39d3-4891-a764-2997a45dddf2_orvzhk.jpg')
   center/cover no-repeat;
 }
 
-/* IMAGEN 3 */
-.bg3{
-  position:absolute;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:70%;
-  height:55%;
-  background:url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg')
-  center/cover no-repeat;
-}
-
-/* OSCURECER FONDO */
+/* OSCURECER SOLO INTERIOR */
 .container::after{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.55);
+  background:rgba(0,0,0,0.35);
   z-index:1;
 }
 
@@ -132,16 +112,6 @@ nav a:hover{
   z-index:2;
 }
 
-/* TEXTOS */
-.card h2{
-  margin-bottom:10px;
-}
-
-.card p{
-  font-size:14px;
-  margin-bottom:20px;
-}
-
 /* BOTONES */
 .btn{
   display:block;
@@ -151,42 +121,13 @@ nav a:hover{
   border-radius:10px;
   text-decoration:none;
   font-weight:bold;
-  transition:0.3s;
 }
 
-/* WHATSAPP */
-.wa{
-  background:#25D366;
-  color:white;
-}
+.wa{background:#25D366;color:white;}
+.call{background:black;color:white;}
+.mail{background:#cfcfcf;color:black;}
 
-.wa:hover{
-  background:#1ebe5d;
-  transform:scale(1.03);
-}
-
-/* LLAMAR */
-.call{
-  background:black;
-  color:white;
-}
-
-.call:hover{
-  transform:scale(1.03);
-}
-
-/* MAIL */
-.mail{
-  background:#cfcfcf;
-  color:black;
-}
-
-.mail:hover{
-  background:#bdbdbd;
-  transform:scale(1.03);
-}
-
-/* BOTÓN FLOTANTE */
+/* WHATSAPP FLOTANTE */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -203,11 +144,6 @@ nav a:hover{
   text-decoration:none;
   box-shadow:0 10px 25px rgba(0,0,0,0.3);
   z-index:9999;
-  transition:0.3s;
-}
-
-.whatsapp-float:hover{
-  transform:scale(1.1);
 }
 
 </style>
@@ -226,49 +162,35 @@ nav a:hover{
 <section class="hero">
 
   <div class="hero-logo">
-    <img src="https://res.cloudinary.com/deod0oalc/image/upload/26ee7d16-8917-402c-bfd4-e442ab53bcb5_o2s2vv.png" alt="Grúas">
+    <img src="https://res.cloudinary.com/deod0oalc/image/upload/26ee7d16-8917-402c-bfd4-e442ab53bcb5_o2s2vv.png">
   </div>
 
   <h1>Contacto</h1>
-  <p>Respuesta rápida para servicios de grúas</p>
 
 </section>
 
 <div class="container">
 
-  <!-- 🔥 COLLAGE -->
+  <!-- COLAGE INTERIOR -->
   <div class="bg">
     <div class="bg1"></div>
     <div class="bg2"></div>
-    <div class="bg3"></div>
   </div>
 
   <!-- CARD -->
   <div class="card">
 
     <h2>Comuníquese con nosotros</h2>
-    <p>Servicio de grúas eficaz y disponible</p>
 
-    <a class="btn wa" href="https://wa.me/5217771330689" target="_blank">
-      💬 WhatsApp
-    </a>
-
-    <a class="btn call" href="tel:+527771330689">
-      📞 Llamar ahora
-    </a>
-
-    <a class="btn mail" target="_blank"
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=gruascr21@gmail.com">
-      ✉️ Enviar correo
-    </a>
+    <a class="btn wa" href="https://wa.me/5217771330689">WhatsApp</a>
+    <a class="btn call" href="tel:+527771330689">Llamar</a>
+    <a class="btn mail" href="https://mail.google.com/mail/?view=cm&fs=1&to=gruascr21@gmail.com">Correo</a>
 
   </div>
 
 </div>
 
-<a href="https://wa.me/5217771330689" class="whatsapp-float" target="_blank">
-  💬
-</a>
+<a href="https://wa.me/5217771330689" class="whatsapp-float">💬</a>
 
 </body>
 </html>
