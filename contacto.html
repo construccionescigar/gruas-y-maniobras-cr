@@ -64,6 +64,26 @@ nav a:hover{
   display:flex;
   justify-content:center;
   padding:50px 20px;
+  position:relative;
+
+  /* 🔥 COLLAGE */
+  background-image:
+    url('https://res.cloudinary.com/deod0oalc/image/upload/9e4a9d3f-a5d8-4d66-80bd-86908a1adf54_agiwts.jpg'),
+    url('https://res.cloudinary.com/deod0oalc/image/upload/70dddf35-39d3-4891-a764-2997a45dddf2_orvzhk.jpg'),
+    url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg');
+
+  background-size: 50% 50%, 50% 50%, 100% 100%;
+  background-position: left top, right top, center bottom;
+  background-repeat: no-repeat;
+}
+
+/* 🔥 OVERLAY OSCURO */
+.container::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.75);
+  z-index:1;
 }
 
 /* CARD */
@@ -74,7 +94,9 @@ nav a:hover{
   width:100%;
   max-width:450px;
   text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  position:relative;
+  z-index:2;
 }
 
 /* TEXTOS */
