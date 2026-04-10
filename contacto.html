@@ -16,13 +16,16 @@
 
 body{
   background:#0f172a;
+  overflow-x:hidden;
 }
 
-/* HEADER (NO TOCADO) */
+/* HEADER */
 header{
   background:#000;
   padding:15px;
   text-align:center;
+  position:relative;
+  z-index:10;
 }
 
 nav a{
@@ -32,27 +35,13 @@ nav a{
   font-weight:bold;
 }
 
-/* HERO LOGO RESTAURADO */
+/* HERO (LOGO NO SE TOCA) */
 .hero{
   position:relative;
   text-align:center;
   color:white;
   padding:60px 20px;
-
-  background:url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg')
-  center/cover no-repeat;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-}
-
-.hero > *{
-  position:relative;
-  z-index:1;
+  z-index:2;
 }
 
 .hero-logo img{
@@ -60,55 +49,59 @@ nav a{
   margin-bottom:10px;
 }
 
-/* 🔥 CONTENEDOR 4 IMÁGENES BIEN BALANCEADO */
-.container{
-  display:flex;
-  flex-wrap:wrap;
-  width:100%;
-  min-height:600px;
-  position:relative;
+.hero h1{
+  font-size:40px;
 }
 
-/* CADA CUADRO */
-.tile{
-  width:50%;
-  height:300px;
+/* 🔥 COLLAGE DE FONDO 4 IMÁGENES */
+.collage{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  z-index:0;
+}
+
+.collage div{
   background-size:cover;
   background-position:center;
-  position:relative;
+  filter:brightness(0.75);
 }
 
 /* IMÁGENES */
-.t1{
+.i1{
   background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg');
 }
 
-.t2{
+.i2{
   background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/9e4a9d3f-a5d8-4d66-80bd-86908a1adf54_agiwts.jpg');
 }
 
-.t3{
+.i3{
   background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/70dddf35-39d3-4891-a764-2997a45dddf2_orvzhk.jpg');
 }
 
-.t4{
+.i4{
   background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/6dab0765-8b3a-497b-9d3c-c81397096391_dz5yzg.jpg');
 }
 
-/* overlay suave (NO azul, NO raro) */
-.tile::before{
+/* OVERLAY GENERAL SUAVE */
+body::before{
   content:"";
-  position:absolute;
+  position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.25);
+  background:rgba(0,0,0,0.35);
+  z-index:1;
 }
 
 /* CARD CENTRADA */
 .card{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
+  position:relative;
+  margin:40px auto;
   background:#e5e5e5;
   padding:40px 25px;
   border-radius:15px;
@@ -138,7 +131,7 @@ nav a{
 .call{background:black;color:white;}
 .mail{background:#cfcfcf;color:black;}
 
-/* WHATSAPP FLOTANTE */
+/* WHATSAPP */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -170,7 +163,7 @@ nav a{
 </nav>
 </header>
 
-<!-- HERO CON LOGO (REGRESADO) -->
+<!-- HERO LOGO -->
 <section class="hero">
 
   <div class="hero-logo">
@@ -182,26 +175,24 @@ nav a{
 
 </section>
 
-<!-- 🔥 4 IMÁGENES PERFECTAMENTE VISIBLES -->
-<div class="container">
+<!-- 🔥 COLLAGE DE FONDO -->
+<div class="collage">
+  <div class="i1"></div>
+  <div class="i2"></div>
+  <div class="i3"></div>
+  <div class="i4"></div>
+</div>
 
-  <div class="tile t1"></div>
-  <div class="tile t2"></div>
-  <div class="tile t3"></div>
-  <div class="tile t4"></div>
+<!-- CARD -->
+<div class="card">
 
-  <!-- CARD -->
-  <div class="card">
+  <h2>Comuníquese con nosotros</h2>
 
-    <h2>Comuníquese con nosotros</h2>
+  <a class="btn wa" href="https://wa.me/5217771330689">💬 WhatsApp</a>
 
-    <a class="btn wa" href="https://wa.me/5217771330689">💬 WhatsApp</a>
+  <a class="btn call" href="tel:+527771330689">📞 Llamar ahora</a>
 
-    <a class="btn call" href="tel:+527771330689">📞 Llamar ahora</a>
-
-    <a class="btn mail" href="https://mail.google.com/mail/?view=cm&fs=1&to=gruascr21@gmail.com">✉️ Correo</a>
-
-  </div>
+  <a class="btn mail" href="https://mail.google.com/mail/?view=cm&fs=1&to=gruascr21@gmail.com">✉️ Correo</a>
 
 </div>
 
