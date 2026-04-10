@@ -1,153 +1,209 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renta de Grúas Cigar</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Renta de Grúas CIGAR</title>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    body {
-      background-color: #0b0b0b;
-      color: #ffffff;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    /* SECCIONES FULL SCREEN */
-    section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
+body{
+  background:#f4f6f8;
+}
 
-    /* HERO */
-    .hero {
-      background: radial-gradient(circle at center, #1a1a1a, #000000);
-    }
+/* NAV estilo empresa (como tu página principal) */
+nav{
+  background:#000;
+  padding:15px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
 
-    .logo {
-      width: 360px;
-      max-width: 80%;
-      margin-bottom: 20px;
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-size:16px;
+  font-weight:bold;
+  transition:0.3s;
+}
 
-    .title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
+nav a:hover{
+  color:#ffffff;
+  opacity:0.7;
+}
 
-    .subtitle {
-      font-size: 1.2rem;
-      color: #cccccc;
-      margin-bottom: 30px;
-      max-width: 600px;
-    }
+/* HERO */
+.hero{
+  height:85vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  background:url('https://images.unsplash.com/photo-1581091870620-2f5b3f6b3b4a') center/cover;
+  color:white;
+}
 
-    .btn {
-      padding: 12px 25px;
-      border: 2px solid #ffffff;
-      background: transparent;
-      color: #ffffff;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-      margin: 5px;
-      text-decoration: none;
-      display: inline-block;
-    }
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.70);
+}
 
-    .btn:hover {
-      background-color: #ffffff;
-      color: #000000;
-    }
+.hero-content{
+  position:relative;
+  z-index:2;
+}
 
-    /* INFO SECTION */
-    .info {
-      background-color: #111111;
-    }
+.hero-logo img{
+  height:240px;
+  margin-bottom:20px;
+}
 
-    .info h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
+h1{
+  font-size:44px;
+  letter-spacing:1px;
+}
 
-    .info p {
-      max-width: 800px;
-      color: #cccccc;
-      line-height: 1.6;
-      font-size: 1.1rem;
-    }
+p{
+  font-size:18px;
+  margin-top:10px;
+  opacity:0.9;
+}
 
-    /* NAV BOTONES ARRIBA (OPCIONAL EJECUTIVO) */
-    .nav {
-      position: fixed;
-      top: 15px;
-      right: 20px;
-      z-index: 1000;
-    }
+.btn{
+  margin-top:25px;
+  display:inline-block;
+  padding:14px 22px;
+  background:transparent;
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+  border:2px solid white;
+  border-radius:6px;
+  transition:0.3s;
+}
 
-    .nav a {
-      margin-left: 10px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.9rem;
-      border-bottom: 1px solid transparent;
-    }
+.btn:hover{
+  background:white;
+  color:black;
+}
 
-    .nav a:hover {
-      border-bottom: 1px solid #fff;
-    }
+/* SECCIONES */
+.section{
+  padding:80px 20px;
+  text-align:center;
+  background:#ffffff;
+}
 
-  </style>
+.section.dark{
+  background:#111;
+  color:white;
+}
+
+.section h2{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+.section p{
+  max-width:800px;
+  margin:auto;
+  line-height:1.6;
+  color:inherit;
+  opacity:0.9;
+}
+
+/* CONTACTO */
+.contact-box{
+  margin-top:20px;
+}
+
+.contact-box a{
+  display:inline-block;
+  padding:12px 20px;
+  border:2px solid white;
+  color:white;
+  text-decoration:none;
+  margin-top:10px;
+}
+
+.contact-box a:hover{
+  background:white;
+  color:black;
+}
+
+@media(max-width:600px){
+  .hero-logo img{height:160px;}
+  h1{font-size:30px;}
+}
+
+</style>
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <div class="nav">
-    <a href="#inicio">Inicio</a>
-    <a href="#info">Información</a>
-  </div>
+<!-- NAV -->
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#info">Información</a>
+  <a href="#contacto">Contacto</a>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <img class="logo" src="https://res.cloudinary.com/deod0oalc/image/upload/LogoCigar_pybcfp.png" alt="Cigar Logo" />
-    
-    <div class="title">Renta de grúas</div>
-    
-    <div class="subtitle">
-      Calidad, confianza y experiencia en cada proyecto...
+<!-- HERO -->
+<section class="hero" id="inicio">
+
+  <div class="hero-content">
+
+    <div class="hero-logo">
+      <img src="https://res.cloudinary.com/deod0oalc/image/upload/LogoCigar_pybcfp.png" alt="CIGAR">
     </div>
 
-    <a href="#info" class="btn">Más información</a>
-    <a href="https://wa.me/0000000000" class="btn">Contactar</a>
-  </section>
+    <h1>Renta de grúas</h1>
+    <p>Calidad, confianza y experiencia en cada proyecto...</p>
 
-  <!-- INFO -->
-  <section class="info" id="info">
-    <h2>Información</h2>
-    <p>
-      Somos una empresa especializada en renta de grúas y maniobras industriales.
-      Ofrecemos soluciones seguras, eficientes y profesionales para proyectos de
-      carga pesada, construcción y logística.
-      <br><br>
-      Nuestro compromiso es brindar servicio de calidad con respuesta inmediata y
-      atención personalizada en cada proyecto.
-    </p>
-  </section>
+    <a class="btn" href="#info">Más información</a>
+    <a class="btn" href="https://wa.me/0000000000">Contactar</a>
+
+  </div>
+
+</section>
+
+<!-- INFO -->
+<section class="section" id="info">
+  <h2>Información</h2>
+  <p>
+    Somos una empresa especializada en renta de grúas y maniobras industriales.
+    Ofrecemos soluciones seguras, eficientes y profesionales para proyectos de
+    carga pesada, construcción y logística.
+  </p>
+</section>
+
+<!-- CONTACTO -->
+<section class="section dark" id="contacto">
+  <h2>Contacto</h2>
+  <p>
+    Contáctanos para cotizaciones rápidas y atención inmediata.
+  </p>
+
+  <div class="contact-box">
+    <a href="https://wa.me/0000000000">Enviar WhatsApp</a>
+  </div>
+</section>
 
 </body>
 </html>
