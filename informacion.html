@@ -36,23 +36,32 @@ nav a{
   font-weight:bold;
 }
 
-/* 🔥 HEADER MEJORADO (SE VE LA IMAGEN) */
+/* 🔥 HEADER CORREGIDO (FONDO VISIBLE REAL) */
 .header{
   position:relative;
   color:white;
   padding:110px 20px;
   text-align:center;
 
-  background:url('https://res.cloudinary.com/deod0oalc/image/upload/Gemini_Generated_Image_3zt7fk3zt7fk3zt7_kuaitf.png')
-  center/cover no-repeat;
+  background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/Gemini_Generated_Image_3zt7fk3zt7fk3zt7_kuaitf.png');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  /* 🔥 clave para que la imagen NO muera */
+  filter:brightness(1.15) contrast(1.05);
 }
 
-/* menos negro para que la imagen respire */
+/* overlay elegante (NO negro sólido) */
 .header::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.45);
+
+  background:linear-gradient(
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.55)
+  );
 }
 
 .header > *{
@@ -60,7 +69,7 @@ nav a{
   z-index:1;
 }
 
-/* 🔥 CUADRO PARA TEXTO PRINCIPAL */
+/* CUADRO DEL HEADER */
 .header-card{
   display:inline-block;
   background:rgba(0,0,0,0.65);
@@ -70,6 +79,7 @@ nav a{
   backdrop-filter:blur(4px);
 }
 
+/* TEXTO HEADER */
 .header h1{
   font-size:40px;
   margin-bottom:10px;
@@ -93,7 +103,7 @@ nav a{
   color:white;
 }
 
-/* 🔥 CUADRO PARA TEXTO LARGO */
+/* CUADRO TEXTO PRINCIPAL */
 .section p{
   max-width:800px;
   margin:auto;
@@ -107,7 +117,7 @@ nav a{
   border:1px solid rgba(255,255,255,0.08);
 }
 
-/* CARDS */
+/* CARDS PREMIUM */
 .cards{
   display:flex;
   flex-wrap:wrap;
@@ -149,10 +159,14 @@ nav a{
   line-height:1.5;
 }
 
-/* COLORES ACENTO */
-.card:nth-child(2) h3{ color:#ff3b3b; }
+/* ACENTOS */
+.card:nth-child(2) h3{
+  color:#ff3b3b;
+}
 
-.card:nth-child(3) h3{ color:#ffcc00; }
+.card:nth-child(3) h3{
+  color:#ffcc00;
+}
 
 /* RESPONSIVE */
 @media(max-width:700px){
