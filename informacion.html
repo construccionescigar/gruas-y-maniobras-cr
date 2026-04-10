@@ -36,32 +36,32 @@ nav a{
   font-weight:bold;
 }
 
-/* 🔥 HEADER CORREGIDO (MEJOR ENCUADRE DE IMAGEN) */
+/* 🔥 HEADER SIN RECORTE (contain real) */
 .header{
   position:relative;
   color:white;
-  padding:140px 20px; /* más alto para mostrar mejor la imagen */
+  padding:140px 20px;
   text-align:center;
 
-  background:url('https://res.cloudinary.com/deod0oalc/image/upload/Gemini_Generated_Image_3zt7fk3zt7fk3zt7_kuaitf.png');
-  background-size:cover;
-  background-position:center top; /* clave para no cortar tanto la escena */
-  background-repeat:no-repeat;
+  /* base elegante */
+  background-color:#0b0f14;
 
-  min-height:420px; /* asegura presencia visual real */
+  /* imagen SIN recorte */
+  background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/Gemini_Generated_Image_3zt7fk3zt7fk3zt7_kuaitf.png');
+  background-size:contain;      /* 🔥 clave: no recorta */
+  background-repeat:no-repeat;
+  background-position:center;
+
+  min-height:500px;
 }
 
-/* overlay suave (NO mata la imagen) */
+/* overlay suave para contraste */
 .header::before{
   content:"";
   position:absolute;
   inset:0;
 
-  background:linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.35)
-  );
+  background:rgba(0,0,0,0.35);
 }
 
 .header > *{
@@ -69,7 +69,7 @@ nav a{
   z-index:1;
 }
 
-/* CUADRO DEL HEADER */
+/* CUADRO HEADER */
 .header-card{
   display:inline-block;
   background:rgba(0,0,0,0.65);
@@ -79,7 +79,7 @@ nav a{
   backdrop-filter:blur(4px);
 }
 
-/* TEXTOS HEADER */
+/* TEXTO HEADER */
 .header h1{
   font-size:40px;
   margin-bottom:10px;
