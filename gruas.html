@@ -3,185 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renta de Grúas | Grupo CIGAR</title>
+  <title>Renta de Grúas Cigar</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
-      background: #0a0a0a;
-      color: #f5f5f5;
+      background-color: #0b0b0b;
+      color: #ffffff;
     }
 
-    header {
-      background: #000;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #222;
-    }
-
-    .logo {
-      height: 45px;
-      object-fit: contain;
-    }
-
-    nav a {
-      color: #ccc;
-      margin-left: 20px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
+    /* HERO */
     .hero {
-      height: 75vh;
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.92));
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 20px;
+      background: radial-gradient(circle at center, #1a1a1a, #000000);
     }
 
-    .hero img {
-      width: 220px;
-      max-width: 80%;
-      margin-bottom: 25px;
+    .logo {
+      width: 180px;
+      margin-bottom: 20px;
     }
 
-    .hero p {
-      font-size: 18px;
-      color: #ccc;
-      margin-top: 10px;
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #cccccc;
+      margin-bottom: 30px;
+      max-width: 600px;
     }
 
     .btn {
-      margin-top: 25px;
       padding: 12px 25px;
-      background: #ffffff;
-      color: #000;
-      border: none;
+      border: 2px solid #ffffff;
+      background: transparent;
+      color: #ffffff;
+      font-size: 1rem;
       cursor: pointer;
-      font-weight: bold;
       transition: 0.3s;
-      border-radius: 5px;
+      margin: 5px;
       text-decoration: none;
       display: inline-block;
     }
 
     .btn:hover {
-      background: #444;
-      color: #fff;
+      background-color: #ffffff;
+      color: #000000;
     }
 
-    .section {
-      padding: 60px 40px;
+    /* INFO SECTION */
+    .info {
+      padding: 80px 20px;
+      background-color: #111111;
       text-align: center;
     }
 
-    .section h3 {
-      font-size: 28px;
+    .info h2 {
+      font-size: 2rem;
       margin-bottom: 20px;
-      text-transform: uppercase;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+    .info p {
+      max-width: 800px;
+      margin: auto;
+      color: #cccccc;
+      line-height: 1.6;
+      font-size: 1.1rem;
     }
 
-    .card {
-      background: #111;
-      padding: 20px;
-      border: 1px solid #222;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2rem;
+      }
 
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #555;
-    }
-
-    .card h4 {
-      margin-bottom: 10px;
-      color: #fff;
-    }
-
-    .card p {
-      color: #aaa;
-      font-size: 14px;
-    }
-
-    footer {
-      background: #000;
-      padding: 20px;
-      text-align: center;
-      border-top: 1px solid #222;
-      color: #777;
+      .logo {
+        width: 140px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img class="logo" src="https://res.cloudinary.com/deod0oalc/image/upload/v1775794311/LogoCigar_pybcfp.png" alt="CIGAR Logo" />
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <section class="hero" id="inicio">
-    <img src="https://res.cloudinary.com/deod0oalc/image/upload/v1775794311/LogoCigar_pybcfp.png" alt="CIGAR Logo Principal" />
-    <p>Renta de grúas profesionales</p>
-    <a class="btn" href="https://wa.me/52TU_NUMERO_AQUI" target="_blank">
-      WhatsApp
-    </a>
-  </section>
-
-  <section class="section" id="servicios">
-    <h3>Nuestros Servicios</h3>
-    <div class="cards">
-      <div class="card">
-        <h4>Grúas Industriales</h4>
-        <p>Levantamiento de maquinaria pesada en obra o industria.</p>
-      </div>
-      <div class="card">
-        <h4>Grúas Telescópicas</h4>
-        <p>Alcance y precisión para trabajos en altura.</p>
-      </div>
-      <div class="card">
-        <h4>Maniobras Especiales</h4>
-        <p>Movimientos complejos con personal especializado.</p>
-      </div>
+  <!-- HERO -->
+  <section class="hero">
+    <img class="logo" src="https://res.cloudinary.com/deod0oalc/image/upload/LogoCigar_pybcfp.png" alt="Cigar Logo" />
+    
+    <div class="title">Renta de grúas</div>
+    
+    <div class="subtitle">
+      Calidad, confianza y experiencia en cada proyecto...
     </div>
+
+    <a href="#info" class="btn">Más información</a>
+    <a href="https://wa.me/0000000000" class="btn">Contactar</a>
   </section>
 
-  <section class="section" id="contacto">
-    <h3>Contacto</h3>
-    <p style="color:#aaa">Escríbenos para una cotización inmediata</p>
-    <a class="btn" href="https://wa.me/52TU_NUMERO_AQUI" target="_blank">
-      WhatsApp
-    </a>
+  <!-- INFO -->
+  <section class="info" id="info">
+    <h2>Información</h2>
+    <p>
+      Somos una empresa especializada en renta de grúas y maniobras industriales.
+      Ofrecemos soluciones seguras, eficientes y profesionales para proyectos de
+      carga pesada, construcción y logística.
+      <br><br>
+      Nuestro compromiso es brindar servicio de calidad con respuesta inmediata y
+      atención personalizada en cada proyecto.
+    </p>
   </section>
-
-  <footer>
-    © 2026 Grupo CIGAR - Todos los derechos reservados
-  </footer>
 
 </body>
 </html>
