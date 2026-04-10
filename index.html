@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CIGAR | Inicio</title>
+<title>Grúas y Maniobras Nacionales CR</title>
 
 <style>
 *{
@@ -39,7 +39,7 @@ nav a:hover{
   opacity:0.7;
 }
 
-/* HERO EJECUTIVO */
+/* HERO */
 .hero{
   height:85vh;
   display:flex;
@@ -47,19 +47,44 @@ nav a:hover{
   align-items:center;
   text-align:center;
   position:relative;
-
-  /* 🔥 FONDO NUEVO: NEGRO + AZUL PREMIUM */
-  background: linear-gradient(135deg, #000000, #111827, #1d4ed8);
-
   color:white;
   overflow:hidden;
+
+  /* 🔥 COLLAGE DE IMÁGENES */
+  background-image:
+    url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg'),
+    url('https://res.cloudinary.com/deod0oalc/image/upload/326a0fda-a150-413b-bc8e-5c8cfa88185a_g4uzaz.jpg'),
+    url('https://res.cloudinary.com/deod0oalc/image/upload/v1775851324/Gruas_cigar_wapdc5.jpg'),
+    url('https://res.cloudinary.com/deod0oalc/image/upload/v1775851689/49456c19-8887-485c-8f07-63e73889eb71_omdwyn.jpg');
+
+  background-size: 50% 50%;
+  background-position: 
+    left top,
+    right top,
+    left bottom,
+    right bottom;
+
+  background-repeat: no-repeat;
 }
 
-/* OVERLAY SUAVE (EFECTO PROFESIONAL) */
-.overlay{
+/* OVERLAY OSCURO PREMIUM */
+.hero::before{
+  content:"";
   position:absolute;
   inset:0;
-  background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 60%);
+  background: linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.85)
+  );
+  z-index:1;
+}
+
+/* EFECTO AZUL SUTIL */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at center, rgba(29,78,216,0.25), transparent 70%);
   z-index:1;
 }
 
@@ -71,7 +96,7 @@ nav a:hover{
 .hero-logo img{
   height:240px;
   margin-bottom:20px;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.7));
 }
 
 h1{
@@ -116,6 +141,11 @@ p{
 
 /* RESPONSIVE */
 @media(max-width:600px){
+  .hero{
+    background-size: cover;
+    background-position: center;
+  }
+
   .hero-logo img{height:160px;}
   h1{font-size:30px;}
 }
@@ -132,16 +162,14 @@ p{
 
 <section class="hero">
 
-  <div class="overlay"></div>
-
   <div class="hero-content">
 
     <div class="hero-logo">
-      <img src="https://res.cloudinary.com/deod0oalc/image/upload/LogoCigar_pybcfp.png" alt="CIGAR">
+      <img src="https://res.cloudinary.com/deod0oalc/image/upload/26ee7d16-8917-402c-bfd4-e442ab53bcb5_o2s2vv.png" alt="CR Grúas">
     </div>
 
-    <h1>Renta de grúas</h1>
-    <p>Calidad, confianza y experiencia en cada proyecto...</p>
+    <h1>Grúas y Maniobras Nacionales CR</h1>
+    <p>Servicio profesional, seguro y disponible 24/7</p>
 
     <a class="btn" href="informacion.html">Más información</a>
     <a class="btn contacto" href="contacto.html">Contacto</a>
