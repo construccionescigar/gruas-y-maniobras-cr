@@ -32,92 +32,55 @@ nav a{
   font-weight:bold;
 }
 
-/* HERO */
-.hero{
-  position:relative;
-  text-align:center;
-  color:white;
-  padding:80px 20px;
-
-  background:url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg')
-  center no-repeat;
-
-  background-size:contain;
-  background-color:#000;
-}
-
-/* oscurecido suave HERO */
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-}
-
-.hero > *{
-  position:relative;
-  z-index:1;
-}
-
-.hero-logo img{
-  height:240px;
-  margin-bottom:15px;
-}
-
-.hero h1{
-  font-size:40px;
-}
-
-/* CONTENEDOR */
+/* 🔥 GRID 4 IMÁGENES BALANCEADAS */
 .container{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:500px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  min-height:600px;
   position:relative;
   overflow:hidden;
 }
 
-/* IZQUIERDA */
-.bg1{
-  position:absolute;
-  left:0;
-  top:0;
-  width:50%;
-  height:100%;
-
-  background:url('https://res.cloudinary.com/deod0oalc/image/upload/9e4a9d3f-a5d8-4d66-80bd-86908a1adf54_agiwts.jpg')
-  center no-repeat;
-
-  background-size:contain;
-  background-color:#000;
+/* CADA CUADRO */
+.tile{
+  background-size:cover;
+  background-position:center;
+  position:relative;
 }
 
-/* DERECHA */
-.bg2{
-  position:absolute;
-  right:0;
-  top:0;
-  width:50%;
-  height:100%;
-
-  background:url('https://res.cloudinary.com/deod0oalc/image/upload/70dddf35-39d3-4891-a764-2997a45dddf2_orvzhk.jpg')
-  center no-repeat;
-
-  background-size:contain;
-  background-color:#000;
+/* IMÁGENES */
+.t1{
+  background:url('https://res.cloudinary.com/deod0oalc/image/upload/08084e6f-ae2e-4300-a621-bfe6c7b55288_ss7txl.jpg');
 }
 
-/* overlay */
+.t2{
+  background:url('https://res.cloudinary.com/deod0oalc/image/upload/9e4a9d3f-a5d8-4d66-80bd-86908a1adf54_agiwts.jpg');
+}
+
+.t3{
+  background:url('https://res.cloudinary.com/deod0oalc/image/upload/70dddf35-39d3-4891-a764-2997a45dddf2_orvzhk.jpg');
+}
+
+.t4{
+  background:url('https://res.cloudinary.com/deod0oalc/image/upload/6dab0765-8b3a-497b-9d3c-c81397096391_dz5yzg.jpg');
+}
+
+/* overlay general elegante */
 .container::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.25);
+  background:rgba(0,0,0,0.35);
+  z-index:1;
 }
 
-/* CARD */
+/* CARD CENTRAL */
 .card{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
   background:#e5e5e5;
   padding:40px 25px;
   border-radius:15px;
@@ -125,7 +88,6 @@ nav a{
   max-width:450px;
   text-align:center;
   box-shadow:0 10px 30px rgba(0,0,0,0.4);
-  position:relative;
   z-index:2;
 }
 
@@ -148,7 +110,7 @@ nav a{
 .call{background:black;color:white;}
 .mail{background:#cfcfcf;color:black;}
 
-/* WHATSAPP FLOAT */
+/* WHATSAPP FLOTANTE */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -180,24 +142,15 @@ nav a{
 </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-
-  <div class="hero-logo">
-    <img src="https://res.cloudinary.com/deod0oalc/image/upload/26ee7d16-8917-402c-bfd4-e442ab53bcb5_o2s2vv.png">
-  </div>
-
-  <h1>Contacto</h1>
-  <p>Respuesta rápida para servicios de grúas</p>
-
-</section>
-
-<!-- CONTENIDO -->
+<!-- 🔥 GRID 4 IMÁGENES -->
 <div class="container">
 
-  <div class="bg1"></div>
-  <div class="bg2"></div>
+  <div class="tile t1"></div>
+  <div class="tile t2"></div>
+  <div class="tile t3"></div>
+  <div class="tile t4"></div>
 
+  <!-- CARD CENTRAL -->
   <div class="card">
 
     <h2>Comuníquese con nosotros</h2>
