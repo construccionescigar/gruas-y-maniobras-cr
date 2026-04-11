@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CIGAR | Servicios</title>
+<title>Grúas | Información</title>
 
 <style>
 
@@ -71,18 +71,28 @@ nav a{
   margin-bottom:10px;
 }
 
-/* 🔥 ESLOGAN ROTATIVO */
-#slogan{
-  font-size:18px;
-  margin-top:8px;
-  opacity:1;
+/* 🔥 ESLOGAN DOBLE */
+.slogan-left,
+.slogan-right{
+  position:absolute;
+  top:25px;
+  font-size:24px;
+  font-weight:700;
+  color:#ffffff;
+  z-index:3;
+  max-width:40%;
+  text-shadow:0 4px 15px rgba(0,0,0,0.6);
   transition:opacity 0.5s ease;
-  color:#d1d5db;
 }
 
-.header p{
-  opacity:0.9;
-  font-size:18px;
+.slogan-left{
+  left:25px;
+  text-align:left;
+}
+
+.slogan-right{
+  right:25px;
+  text-align:right;
 }
 
 /* SECTION */
@@ -96,7 +106,6 @@ nav a{
   margin-bottom:20px;
 }
 
-/* TEXT */
 .section p{
   max-width:800px;
   margin:auto;
@@ -150,6 +159,12 @@ nav a{
 /* RESPONSIVE */
 @media(max-width:700px){
   .header h1{font-size:28px;}
+
+  .slogan-left,
+  .slogan-right{
+    font-size:16px;
+    max-width:45%;
+  }
 }
 </style>
 </head>
@@ -164,64 +179,79 @@ nav a{
 
 <!-- HEADER -->
 <div class="header">
+
+  <!-- ESLOGANES -->
+  <div class="slogan-left" id="sloganLeft"></div>
+  <div class="slogan-right" id="sloganRight"></div>
+
   <div class="header-card">
-    <h1>Nuestros Servicios</h1>
-
-    <!-- ESLOGAN -->
-    <div id="slogan">Soluciones de izaje para cada proyecto</div>
-
-    <p>Soluciones profesionales en renta de grúas y maniobras industriales</p>
+    <h1>Nuestra Empresa</h1>
+    <p>Experiencia, seguridad y profesionalismo en cada maniobra</p>
   </div>
 </div>
 
 <!-- INTRO -->
 <section class="section">
-  <h2>¿Qué ofrecemos?</h2>
+  <h2>¿Quiénes somos?</h2>
 
   <p>
-    En Gruas y Maniobras Nacionales CR brindamos servicios especializados en renta de grúas para proyectos
-    industriales, construcción y logística. Nuestro enfoque es garantizar seguridad,
-    eficiencia y respuesta inmediata en cada operación.
+    En Grúas y Maniobras Nacionales CR contamos con amplia experiencia en el manejo de cargas pesadas,
+    maquinaria industrial y proyectos de construcción. Nos enfocamos en la seguridad, eficiencia y
+    cumplimiento en cada servicio.
   </p>
 
   <div class="cards">
 
     <div class="card">
-      <h3>Renta de Grúas</h3>
-      <p>Equipo moderno y seguro para cargas pesadas en distintos proyectos.</p>
+      <h3>Experiencia</h3>
+      <p>Más de años en maniobras industriales y transporte de carga especializada.</p>
     </div>
 
     <div class="card">
-      <h3>Maniobras Industriales</h3>
-      <p>Movimientos precisos de maquinaria y estructuras con personal capacitado.</p>
+      <h3>Seguridad</h3>
+      <p>Protocolos estrictos para garantizar cada operación sin riesgos.</p>
     </div>
 
     <div class="card">
-      <h3>Logística y Carga</h3>
-      <p>Apoyo en transporte y colocación de materiales en obra o industria.</p>
+      <h3>Profesionalismo</h3>
+      <p>Personal capacitado y equipo especializado para cada proyecto.</p>
     </div>
 
   </div>
 </section>
 
 <script>
-const slogans = [
-  "Soluciones de izaje para cada proyecto",
-  "Subimos lo que tu obra necesita",
-  "Eficiencia en cada movimiento vertical",
-  "Equipos preparados para grandes retos"
+const left = [
+  "Conoce nuestra experiencia",
+  "Profesionales en maniobras",
+  "Seguridad en cada operación",
+  "Trayectoria confiable"
+];
+
+const right = [
+  "Resultados garantizados",
+  "Equipo especializado",
+  "Menos riesgo, más control",
+  "Confianza total"
 ];
 
 let i = 0;
-const el = document.getElementById("slogan");
+
+const l = document.getElementById("sloganLeft");
+const r = document.getElementById("sloganRight");
 
 setInterval(() => {
-  el.style.opacity = 0;
+  l.style.opacity = 0;
+  r.style.opacity = 0;
 
   setTimeout(() => {
-    i = (i + 1) % slogans.length;
-    el.textContent = slogans[i];
-    el.style.opacity = 1;
+    i = (i + 1) % left.length;
+
+    l.textContent = left[i];
+    r.textContent = right[i];
+
+    l.style.opacity = 1;
+    r.style.opacity = 1;
   }, 400);
 
 }, 3000);
