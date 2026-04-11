@@ -53,12 +53,21 @@ nav a{
   font-size:40px;
 }
 
-/* 🔥 ESLOGAN ROTATIVO */
+/* 🔥 ESLOGAN GRANDE (NUEVO) */
 #slogan{
-  font-size:18px;
-  margin-top:8px;
-  opacity:1;
+  font-size:28px;
+  margin-top:12px;
+  font-weight:700;
+  color:#ffffff;
   transition:opacity 0.5s ease;
+  text-shadow:0 4px 15px rgba(0,0,0,0.6);
+}
+
+/* SUBTEXTO */
+.hero p{
+  opacity:0.9;
+  font-size:18px;
+  margin-top:6px;
   color:#e5e7eb;
 }
 
@@ -107,6 +116,10 @@ body::before{
   text-align:center;
   box-shadow:0 10px 30px rgba(0,0,0,0.4);
   z-index:2;
+}
+
+.card h2{
+  margin-bottom:10px;
 }
 
 .btn{
@@ -167,10 +180,10 @@ body::before{
 
   <h1>Contacto</h1>
 
-  <!-- ESLOGAN -->
-  <div id="slogan">Estamos listos cuando tú lo estés</div>
-
   <p>Respuesta rápida para servicios de grúas</p>
+
+  <!-- 🔥 ESLOGAN GRANDE ABAJO -->
+  <div id="slogan">Estamos listos cuando tú lo estés</div>
 
 </section>
 
@@ -200,7 +213,7 @@ const slogans = [
   "Estamos listos cuando tú lo estés",
   "Respuesta inmediata para tu proyecto",
   "Cotiza tu servicio en minutos",
-  "Tu proyecto comienza con una llamada"
+  "Atención profesional 24/7"
 ];
 
 let i = 0;
