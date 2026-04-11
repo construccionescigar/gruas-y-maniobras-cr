@@ -41,7 +41,8 @@ nav a:hover{
 
 /* HERO */
 .hero{
-  height:85vh;
+  height:100vh; /* 🔥 FIX PRINCIPAL */
+  min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -58,12 +59,25 @@ nav a:hover{
 
   background-size: 50% 50%;
   background-position: 
-    left top,
-    right top,
-    left bottom,
-    right bottom;
+    top left,
+    top right,
+    bottom left,
+    bottom right;
 
   background-repeat: no-repeat;
+
+  /* 🔥 ZOOM SUAVE */
+  animation: zoomHero 18s ease-in-out infinite alternate;
+}
+
+/* 🔥 ANIMACIÓN ZOOM */
+@keyframes zoomHero {
+  0%{
+    background-size: 50% 50%;
+  }
+  100%{
+    background-size: 55% 55%;
+  }
 }
 
 .hero::before{
@@ -159,6 +173,7 @@ h1{
   .hero{
     background-size: cover;
     background-position: center;
+    animation:none; /* 🔥 evita bug en móviles */
   }
 
   .hero-logo img{height:160px;}
@@ -183,7 +198,7 @@ h1{
 
 <section class="hero">
 
-  <!-- 🔥 ESLOGANES -->
+  <!-- ESLOGANES -->
   <div class="slogan-left" id="sloganLeft"></div>
   <div class="slogan-right" id="sloganRight"></div>
 
