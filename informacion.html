@@ -50,45 +50,38 @@ nav a{
   font-weight:bold;
 }
 
-/* HEADER (CORREGIDO) */
+/* HEADER */
 .header{
   position:relative;
-  padding:30px 20px 70px 20px; /* 🔥 MENOS VACÍO INUTIL */
+  padding:40px 20px 120px 20px;
   text-align:center;
 }
 
-/* 🔥 SLOGANS CON CUADRO (AHORA SÍ PREMIUM) */
+/* ESLOGANES */
 .slogan-left,
 .slogan-right{
   position:absolute;
-  top:18px;
-  font-size:20px;
+  top:20px;
+  font-size:24px;
   font-weight:700;
-  color:#fff;
-  max-width:35%;
+  color:#ffffff;
   z-index:3;
-
-  padding:10px 14px;
-  background:rgba(0,0,0,0.55);
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:10px;
-  backdrop-filter:blur(6px);
-
-  text-shadow:0 3px 10px rgba(0,0,0,0.6);
+  max-width:40%;
+  text-shadow:0 4px 15px rgba(0,0,0,0.6);
   transition:opacity 0.5s ease;
 }
 
 .slogan-left{
-  left:20px;
+  left:25px;
   text-align:left;
 }
 
 .slogan-right{
-  right:20px;
+  right:25px;
   text-align:right;
 }
 
-/* HEADER CARD */
+/* CARD HEADER */
 .header-card{
   display:inline-block;
   background:rgba(0,0,0,0.65);
@@ -96,8 +89,7 @@ nav a{
   border-radius:12px;
   border:1px solid rgba(255,255,255,0.1);
   backdrop-filter:blur(4px);
-
-  margin-top:10px; /* 🔥 SUBIDO VISUALMENTE */
+  margin-top:20px;
 }
 
 .header h1{
@@ -105,15 +97,15 @@ nav a{
   margin-bottom:10px;
 }
 
-/* SECTION (SUBIDA REAL) */
+/* SECTION */
 .section{
-  padding:25px 20px 70px 20px; /* 🔥 MÁS ARRIBA */
+  padding:40px 20px 90px 20px; /* 🔥 más aire abajo */
   text-align:center;
 }
 
 .section h2{
   font-size:32px;
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 
 /* TEXTO */
@@ -129,7 +121,7 @@ nav a{
   border-radius:12px;
   border:1px solid rgba(255,255,255,0.1);
 
-  margin-bottom:35px; /* 🔥 MENOS ESPACIO INFERIOR */
+  margin-bottom:60px; /* 🔥 más separación */
 }
 
 /* CARDS */
@@ -138,6 +130,8 @@ nav a{
   flex-wrap:wrap;
   justify-content:center;
   gap:20px;
+
+  margin-top:25px; /* 🔥 AQUÍ ESTÁ EL AJUSTE PRINCIPAL */
 }
 
 .card{
@@ -174,7 +168,7 @@ nav a{
 
   .slogan-left,
   .slogan-right{
-    font-size:14px;
+    font-size:16px;
     max-width:45%;
   }
 }
