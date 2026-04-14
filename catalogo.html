@@ -68,14 +68,26 @@ nav a:hover{
   color:#25D366;
 }
 
-/* 🔥 HEADER IGUAL A LAS DEMÁS PÁGINAS */
+/* 🔥 HEADER IGUAL A SERVICIOS */
 .header{
+  padding:80px 20px 30px;
   text-align:center;
-  padding:80px 20px 30px; /* 👈 RESTAURADO (clave) */
+}
+
+/* 🔥 ESTA ES LA CLAVE */
+.header-card{
+  display:inline-block;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:30px 32px;
+  border-radius:16px;
+  max-width:750px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
 .header h1{
-  font-size:42px; /* 👈 IGUAL QUE SERVICIOS */
+  font-size:42px;
   font-weight:900;
   margin-bottom:10px;
 }
@@ -149,8 +161,10 @@ nav a:hover{
 </nav>
 
 <div class="header">
-  <h1>Catálogo</h1>
-  <p>Galería de equipos y maniobras</p>
+  <div class="header-card">
+    <h1>Catálogo</h1>
+    <p>Galería de equipos y maniobras</p>
+  </div>
 </div>
 
 <section class="grid">
