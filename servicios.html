@@ -20,9 +20,10 @@ body{
   color:white;
   position:relative;
   overflow-x:hidden;
+  background:#0b0f14;
 }
 
-/* 🔥 FONDO PRO (BALANCEADO PC) */
+/* 🔥 MISMO SISTEMA QUE INDEX (ESTO ES LA CORRECCIÓN REAL) */
 body::before{
   content:"";
   position:fixed;
@@ -30,15 +31,17 @@ body::before{
 
   background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/width_1200_nfpbpj.png");
 
-  /* 🔥 AJUSTE PRO REAL */
-  background-size:115%;
+  background-size:cover;
   background-position:center 25%;
   background-repeat:no-repeat;
+
+  transform:scale(1.05);
+  filter:brightness(0.85) contrast(1.1);
 
   z-index:-2;
 }
 
-/* 🔥 OVERLAY PRO */
+/* OVERLAY */
 body::after{
   content:"";
   position:fixed;
@@ -46,8 +49,8 @@ body::after{
 
   background:linear-gradient(
     180deg,
-    rgba(0,0,0,0.40),
-    rgba(0,0,0,0.88)
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.80)
   );
 
   z-index:-1;
@@ -197,7 +200,7 @@ nav a:hover{
   background:#1ebe5d;
 }
 
-/* 📱 MOBILE PRO */
+/* RESPONSIVE */
 @media(max-width:768px){
 
   nav{
@@ -212,9 +215,7 @@ nav a:hover{
     font-size:24px;
   }
 
-  /* 🔥 más visibilidad en móvil */
   body::before{
-    background-size:125%;
     background-position:center 18%;
   }
 }
@@ -232,12 +233,10 @@ nav a:hover{
 </nav>
 
 <div class="header">
-
   <div class="header-card">
     <h1>Servicios</h1>
     <p>Soluciones profesionales en izaje, maniobras y transporte de carga pesada</p>
   </div>
-
 </div>
 
 <section class="section">
