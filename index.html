@@ -48,7 +48,7 @@ nav a:hover{
   color:#25D366;
 }
 
-/* HERO */
+/* HERO (FONDO RESTAURADO TAL CUAL BASE ORIGINAL) */
 .hero{
   min-height:100vh;
   display:flex;
@@ -58,24 +58,21 @@ nav a:hover{
   position:relative;
   overflow:hidden;
 
-  /* 🔥 FONDO ARREGLADO */
   background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg');
   background-size:cover;
+  background-position:center;
   background-repeat:no-repeat;
-  background-position:center 30%;
-  background-attachment:fixed;
 }
 
-/* 🔥 OVERLAY MÁS LIMPIO (QUITAMOS EFECTO “GRIS SUCIO”) */
+/* OVERLAY SUAVE COMO TU VERSIÓN ORIGINAL BUENA */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(circle at center, rgba(0,0,0,0.25), rgba(0,0,0,0.85));
+  background:rgba(0,0,0,0.70);
 }
 
-/* CENTRADO */
+/* CONTENIDO */
 .hero-content{
   position:relative;
   z-index:2;
@@ -129,7 +126,6 @@ nav a:hover{
   gap:12px;
   flex-wrap:wrap;
   justify-content:center;
-  margin-top:5px;
 }
 
 .btn{
@@ -193,12 +189,6 @@ nav a:hover{
 
   .sub{
     font-size:15px;
-  }
-
-  /* 🔥 FIX MÓVIL (IMPORTANTE) */
-  .hero{
-    background-attachment:scroll;
-    background-position:center;
   }
 }
 
