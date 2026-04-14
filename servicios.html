@@ -22,7 +22,7 @@ body{
   overflow-x:hidden;
 }
 
-/* 🔥 FONDO AJUSTADO (MENOS RECORTE / MÁS VISIBILIDAD) */
+/* 🔥 FONDO PRO (BALANCEADO PC) */
 body::before{
   content:"";
   position:fixed;
@@ -30,9 +30,9 @@ body::before{
 
   background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/width_1200_nfpbpj.png");
 
-  /* 👇 CAMBIO CLAVE */
-  background-size:105%;
-  background-position:center;
+  /* 🔥 AJUSTE PRO REAL */
+  background-size:115%;
+  background-position:center 25%;
   background-repeat:no-repeat;
 
   z-index:-2;
@@ -197,7 +197,7 @@ nav a:hover{
   background:#1ebe5d;
 }
 
-/* RESPONSIVE */
+/* 📱 MOBILE PRO */
 @media(max-width:768px){
 
   nav{
@@ -212,9 +212,10 @@ nav a:hover{
     font-size:24px;
   }
 
-  /* 📱 MÁS VISIBILIDAD EN MÓVIL */
+  /* 🔥 más visibilidad en móvil */
   body::before{
-    background-size:115%;
+    background-size:125%;
+    background-position:center 18%;
   }
 }
 
