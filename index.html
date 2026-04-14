@@ -58,27 +58,31 @@ nav a:hover{
   position:relative;
   overflow:hidden;
 
+  /* 🔥 CONTROL REAL DEL FONDO */
   background-image:url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg');
   background-size:cover;
 
-  /* 🔥 ARREGLO DEL FONDO */
-  background-position:center 35%;
+  /* 🔥 ESTE ES EL CAMBIO IMPORTANTE */
+  background-position:50% 25%;
+
   background-repeat:no-repeat;
+
+  /* 🔥 mejora percepción de nitidez */
+  filter: contrast(1.1) saturate(1.05);
 }
 
-/* 🔥 OVERLAY CORREGIDO (MEJOR CONTRASTE SIN BORROSIDAD) */
+/* 🔥 OVERLAY CON PROFUNDIDAD REAL (NO PLANO) */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,0.45),
-    rgba(0,0,0,0.80)
-  );
+
+  background:
+    radial-gradient(circle at 50% 35%, rgba(0,0,0,0.15), rgba(0,0,0,0.75)),
+    linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.85));
 }
 
-/* CENTRADO REAL PERFECTO */
+/* CONTENIDO */
 .hero-content{
   position:relative;
   z-index:2;
@@ -112,7 +116,7 @@ nav a:hover{
   filter:drop-shadow(0 15px 35px rgba(0,0,0,0.7));
 }
 
-/* TEXTO PRINCIPAL */
+/* TEXTO */
 .main-text{
   font-size:72px;
   font-weight:950;
@@ -120,7 +124,6 @@ nav a:hover{
   line-height:1.05;
 }
 
-/* SUBTEXTO */
 .sub{
   font-size:18px;
   opacity:0.9;
@@ -133,7 +136,6 @@ nav a:hover{
   gap:12px;
   flex-wrap:wrap;
   justify-content:center;
-  margin-top:5px;
 }
 
 .btn{
