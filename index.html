@@ -10,230 +10,203 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial,sans-serif;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
 body{
-  background:#f4f6f8;
+  background:#0b0f14;
+  color:white;
 }
 
 /* NAV */
 nav{
-  background:#000;
-  padding:15px;
-  text-align:center;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(10px);
+  padding:12px 20px;
   position:sticky;
   top:0;
   z-index:1000;
   display:flex;
   justify-content:center;
+  gap:18px;
   flex-wrap:wrap;
-  gap:10px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  margin:0 10px;
-  font-size:16px;
-  font-weight:bold;
-  white-space:nowrap;
+  font-size:15px;
+  font-weight:600;
+  opacity:0.85;
+  transition:0.3s;
 }
 
 nav a:hover{
-  opacity:0.7;
+  opacity:1;
+  color:#25D366;
 }
 
 /* HERO */
 .hero{
-  height:100vh;
   min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
   position:relative;
-  color:white;
   overflow:hidden;
 
   background-image:
-    url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg'),
-    url('https://res.cloudinary.com/deod0oalc/image/upload/326a0fda-a150-413b-bc8e-5c8cfa88185a_g4uzaz.jpg'),
-    url('https://res.cloudinary.com/deod0oalc/image/upload/v1775851324/Gruas_cigar_wapdc5.jpg'),
-    url('https://res.cloudinary.com/deod0oalc/image/upload/v1775851689/49456c19-8887-485c-8f07-63e73889eb71_omdwyn.jpg');
-
-  background-size: 50% 50%;
-  background-position: top left, top right, bottom left, bottom right;
-  background-repeat: no-repeat;
+    url('https://res.cloudinary.com/deod0oalc/image/upload/43dcb4ec-8245-41d1-9450-03e1a0432d89_o1z4ys.jpg');
+  background-size:cover;
+  background-position:center;
 }
 
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.72);
-  z-index:1;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.85)
+  );
 }
 
 .hero-content{
   position:relative;
   z-index:2;
+  max-width:900px;
+  padding:20px;
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding:20px;
-}
-
-/* SLOGAN PRINCIPAL */
-.main-slogan{
-  font-size:28px;
-  font-weight:700;
-  letter-spacing:2px;
-  margin-bottom:15px;
-  padding:10px 18px;
-  border-radius:12px;
-  background:rgba(0,0,0,0.45);
-  border:1px solid rgba(255,255,255,0.15);
-  backdrop-filter:blur(6px);
-  text-align:center;
+  gap:18px;
 }
 
 /* LOGO */
 .hero-logo img{
-  height:240px;
+  height:180px;
   max-width:90%;
-  object-fit:contain;
-  margin-bottom:20px;
-  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.7));
+  filter:drop-shadow(0 10px 25px rgba(0,0,0,0.7));
 }
 
+/* TITULO */
 h1{
-  font-size:44px;
-  text-align:center;
-  padding:0 10px;
+  font-size:42px;
+  font-weight:800;
+  letter-spacing:1px;
 }
 
-/* SLOGANS */
-.slogan-left,
-.slogan-right{
-  position:absolute;
-  top:20px;
+.sub{
   font-size:18px;
-  font-weight:700;
-  color:white;
-  z-index:3;
-  max-width:42%;
-  text-shadow:0 3px 10px rgba(0,0,0,0.6);
-  transition:opacity 0.5s ease;
+  opacity:0.85;
+}
 
-  background:rgba(0,0,0,0.45);
+/* BADGE */
+.badge{
+  background:rgba(37, 211, 102, 0.15);
+  border:1px solid rgba(37,211,102,0.4);
   padding:10px 16px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,0.15);
-  backdrop-filter:blur(4px);
-}
-
-.slogan-left{
-  left:20px;
-  text-align:left;
-}
-
-.slogan-right{
-  right:20px;
-  text-align:right;
+  border-radius:50px;
+  font-weight:600;
+  font-size:14px;
+  color:#25D366;
 }
 
 /* BOTONES */
+.buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:10px;
+}
+
 .btn{
-  margin-top:25px;
-  display:inline-block;
-  padding:14px 22px;
-  background:transparent;
-  color:white;
-  font-weight:bold;
+  padding:14px 20px;
+  border-radius:8px;
   text-decoration:none;
-  border:2px solid white;
-  border-radius:6px;
+  font-weight:700;
+  font-size:15px;
   transition:0.3s;
 }
 
-.btn:hover{
+.btn.primary{
+  background:#25D366;
+  color:white;
+}
+
+.btn.primary:hover{
+  background:#1ebe5d;
+}
+
+.btn.secondary{
+  border:2px solid white;
+  color:white;
+}
+
+.btn.secondary:hover{
   background:white;
   color:black;
 }
 
-.btn.contacto{
+/* WHATSAPP FLOAT */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
   background:#25D366;
-  border:2px solid #25D366;
-}
-
-.btn.contacto:hover{
-  background:#1ebe5d;
-  border-color:#1ebe5d;
   color:white;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  z-index:2000;
+  text-decoration:none;
 }
 
-/* 🔥 RESPONSIVE REAL */
+/* RESPONSIVE */
 @media(max-width:768px){
 
-  .hero{
-    background-size:cover;
-    background-position:center;
-  }
-
-  nav{
-    flex-direction:column;
-  }
-
-  nav a{
-    font-size:14px;
-    margin:5px 0;
+  h1{
+    font-size:28px;
   }
 
   .hero-logo img{
-    height:160px;
+    height:140px;
   }
 
-  h1{
-    font-size:26px;
+  .sub{
+    font-size:15px;
   }
 
-  .main-slogan{
-    font-size:18px;
-    padding:8px 12px;
-  }
-
-  .slogan-left,
-  .slogan-right{
-    position:static;
-    display:block;
-    margin:10px auto;
-    max-width:90%;
-    font-size:14px;
-    text-align:center;
+  nav{
+    gap:10px;
   }
 }
-
 </style>
 </head>
 
 <body>
 
 <nav>
-<a href="index.html">Inicio</a>
-<a href="informacion.html">Información</a>
-<a href="servicios.html">Servicios</a>
-<a href="contacto.html">Contacto</a>
+  <a href="index.html">Inicio</a>
+  <a href="informacion.html">Información</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="contacto.html">Contacto</a>
 </nav>
 
 <section class="hero">
 
-  <div class="slogan-left" id="sloganLeft"></div>
-  <div class="slogan-right" id="sloganRight"></div>
-
   <div class="hero-content">
 
-    <div class="main-slogan">SE RENTAN GRÚAS INDUSTRIALES</div>
+    <div class="badge">🚧 Renta de Grúas Industriales en Costa Rica</div>
 
     <div class="hero-logo">
       <img src="https://res.cloudinary.com/deod0oalc/image/upload/LogoGruaPNG_xpqskn.png">
@@ -241,49 +214,23 @@ h1{
 
     <h1>Grúas y Maniobras Nacionales CR</h1>
 
-    <a class="btn" href="informacion.html">Más información</a>
-    <a class="btn contacto" href="contacto.html">Contacto</a>
+    <div class="sub">
+      Soluciones profesionales en izaje, maniobras y transporte especializado
+    </div>
+
+    <div class="buttons">
+      <a class="btn primary" href="contacto.html">Cotizar por WhatsApp</a>
+      <a class="btn secondary" href="servicios.html">Ver servicios</a>
+    </div>
 
   </div>
 
 </section>
 
-<script>
-const left = [
-  "Elevamos tus proyectos",
-  "Movemos lo pesado",
-  "Precisión total",
-  "Soluciones en altura"
-];
-
-const right = [
-  "Seguridad garantizada",
-  "Eficiencia profesional",
-  "Confianza total",
-  "Respuesta inmediata"
-];
-
-let i = 0;
-
-const l = document.getElementById("sloganLeft");
-const r = document.getElementById("sloganRight");
-
-setInterval(() => {
-  l.style.opacity = 0;
-  r.style.opacity = 0;
-
-  setTimeout(() => {
-    i = (i + 1) % left.length;
-
-    l.textContent = left[i];
-    r.textContent = right[i];
-
-    l.style.opacity = 1;
-    r.style.opacity = 1;
-  }, 400);
-
-}, 3000);
-</script>
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/50600000000" target="_blank">
+  💬
+</a>
 
 </body>
 </html>
