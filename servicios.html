@@ -23,25 +23,18 @@ body{
   background:#0b0f14;
 }
 
-/* =========================
-   🔥 FONDO AJUSTADO CORRECTO
-   ========================= */
+/* 🔥 FONDO */
 body::before{
   content:"";
   position:fixed;
   inset:0;
 
   background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/width_1200_nfpbpj.png");
-
   background-size:cover;
-
-  /* 🎯 AJUSTE REAL (CLAVE) */
   background-position:50% 45%;
-
   background-repeat:no-repeat;
 
   transform:scale(1.03);
-
   filter:brightness(0.85) contrast(1.05);
 
   z-index:-2;
@@ -60,6 +53,29 @@ body::after{
   );
 
   z-index:-1;
+}
+
+/* 🔥 SLOGANS */
+.slogan{
+  position:fixed;
+  top:90px;
+  width:260px;
+  font-size:14px;
+  font-weight:700;
+  color:#25D366;
+  opacity:0.9;
+  z-index:999;
+  line-height:1.4;
+}
+
+.slogan.left{
+  left:20px;
+  text-align:left;
+}
+
+.slogan.right{
+  right:20px;
+  text-align:right;
 }
 
 /* NAV */
@@ -213,6 +229,10 @@ nav a:hover{
 /* RESPONSIVE */
 @media(max-width:768px){
 
+  .slogan{
+    display:none; /* 🔥 ocultar en celular */
+  }
+
   nav{
     gap:10px;
   }
@@ -235,6 +255,10 @@ nav a:hover{
 </head>
 
 <body>
+
+<!-- SLOGANS -->
+<div class="slogan left" id="sloganLeft"></div>
+<div class="slogan right" id="sloganRight"></div>
 
 <nav>
   <a href="index.html">Inicio</a>
@@ -284,6 +308,34 @@ nav a:hover{
   </div>
 
 </section>
+
+<script>
+const slogans = [
+"Precisión en cada maniobra",
+"Elevamos proyectos, no solo cargas",
+"Ingeniería y potencia en cada izaje",
+"Soluciones seguras para cargas críticas",
+"Tu proyecto en manos expertas",
+"Maniobras complejas, resultados simples",
+"Capacidad que supera expectativas",
+"Donde otros no llegan, nosotros sí",
+"Tecnología, fuerza y experiencia",
+"Operación segura, resultado garantizado",
+"Especialistas en carga pesada",
+"Movemos lo imposible"
+];
+
+let i = 0;
+
+function cambiarSlogan(){
+  document.getElementById("sloganLeft").textContent = slogans[i];
+  document.getElementById("sloganRight").textContent = slogans[(i+1) % slogans.length];
+  i = (i + 1) % slogans.length;
+}
+
+cambiarSlogan();
+setInterval(cambiarSlogan, 7000);
+</script>
 
 </body>
 </html>
