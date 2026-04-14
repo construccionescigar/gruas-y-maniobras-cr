@@ -14,43 +14,47 @@
   font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* 🔥 FONDO RESPONSIVE CORRECTO */
+/* 🔥 BASE */
 body{
   min-height:100vh;
   color:white;
   position:relative;
+  overflow-x:hidden;
 }
 
-/* imagen de fondo SIN zoom (clave) */
+/* 🔥 FONDO IGUAL AL INDEX (SISTEMA HERO) */
 body::before{
   content:"";
   position:fixed;
   inset:0;
 
-  background:
-    url("https://res.cloudinary.com/deod0oalc/image/upload/width_1536_lmbsca.jpg");
+  background-image:url("https://res.cloudinary.com/deod0oalc/image/upload/width_1536_lmbsca.jpg");
 
   background-size:cover;
 
-  /* 👇 AJUSTE IMPORTANTE */
-  background-position: center 35%;
+  /* 🎯 ENCUDRE EXACTO (igual lógica que index) */
+  background-position:50% 25%;
 
   background-repeat:no-repeat;
+
+  transform:scale(1.06);
+
+  filter:contrast(1.05) saturate(1.05) brightness(0.80);
 
   z-index:-2;
 }
 
-/* overlay profesional */
+/* 🔥 OVERLAY IGUAL CALIDAD HERO */
 body::after{
   content:"";
   position:fixed;
   inset:0;
 
-  background:
-    linear-gradient(to bottom,
-      rgba(0,0,0,0.55),
-      rgba(0,0,0,0.88)
-    );
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.88)
+  );
 
   z-index:-1;
 }
@@ -208,9 +212,10 @@ nav a:hover{
     font-size:15px;
   }
 
-  /* 👇 ajuste clave para celular */
+  /* 📱 ajuste igual al hero mobile */
   body::before{
-    background-position:center 25%;
+    background-position:50% 18%;
+    transform:scale(1.10);
   }
 }
 
